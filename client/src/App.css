@@ -2,8 +2,10 @@
   text-align: center;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   margin: 0px;
   padding: 0px;
+
 }
 
 .App-header {

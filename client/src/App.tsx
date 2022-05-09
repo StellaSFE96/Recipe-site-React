@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import RecipeCard from './components/RecipeCard';
 
 function App() {
   return (
@@ -8,6 +9,10 @@ function App() {
         <h1>Desserts & Cocktails</h1>
         <p className="App-subheader">a simple and sweet recipe collection</p>
       </header>
+      <div>
+      <RecipeCard/>
+      </div>
+      
     </div>
   );
 }
