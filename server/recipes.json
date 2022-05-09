@@ -1,0 +1,66 @@
+[{  
+    "title": "Ice Cream",
+    "description": "Vegan Vanilla Ice cream",
+    "imageUrl": "https://images.unsplash.com/photo-1614014077943-840960ce6694?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    "timeInMins": 55,
+    "ratings": [    
+        1,    
+        2,    
+        3  
+    ], 
+    "ingredients": [{ 
+        "name": "milk",      
+        "amount": 1,      
+        "unit": "dl"    
+    },    
+    {   "name": "cream",      
+        "amount": 2,      
+        "unit": "dl"    
+    },    
+    {      
+        "name": "vanilla",      
+        "amount": 1,      
+        "unit": "ml"    
+    },    
+    {      
+        "name": "ice",      
+        "amount": 1,      
+        "unit": "dl"    
+    }],
+
+    "instructions": "mix and cook",  
+    "category": "desserts"
+},
+{  
+    "title": "Chocolate cake",
+    "description": "Rich chocolate cake with cherries",
+    "imageUrl": "https://images.unsplash.com/photo-1614014077943-840960ce6694?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    "timeInMins": 230,
+    "ratings": [    
+        1,    
+        2,    
+        3  
+    ], 
+    "ingredients": [{ 
+        "name": "milk",      
+        "amount": 1,      
+        "unit": "dl"    
+    },    
+    {   "name": "cream",      
+        "amount": 2,      
+        "unit": "dl"    
+    },    
+    {      
+        "name": "vanilla",      
+        "amount": 1,      
+        "unit": "ml"    
+    },    
+    {      
+        "name": "ice",      
+        "amount": 1,      
+        "unit": "dl"    
+    }],
+
+    "instructions": "mix and cook",  
+    "category": "desserts"
+}]
