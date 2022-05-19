@@ -1,16 +1,16 @@
-import React from 'react';
 import './App.css';
-import RecipeCard from './components/RecipeCard';
+// import RecipeCard from './components/RecipeCard';
+import RecipeList from './components/RecipeList';
+import Categories from './components/Categories';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Desserts & Cocktails</h1>
-        <p className="App-subheader">a simple and sweet recipe collection</p>
-      </header>
+      <Header/>
       <div>
-      <RecipeCard/>
+      <Categories/>
+      <RecipeList/>
       </div>
       
     </div>
