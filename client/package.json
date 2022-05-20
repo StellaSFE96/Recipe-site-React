@@ -13,7 +13,6 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/react-stars": "^2.2.1",
     "@types/styled-components": "^5.1.25",
-    "@types/cors": "^2.8.12",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
@@ -24,8 +23,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start-dev": "react-scripts start",
-    "start": "ts-node server.ts",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
