@@ -11,10 +11,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/Recipe" element={<Recipe />} />
-    </Routes>
+    <App/>
   </BrowserRouter>
   // <React.StrictMode>
   //   <App />

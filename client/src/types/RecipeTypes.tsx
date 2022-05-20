@@ -11,14 +11,21 @@ export interface RecipeType {
     ingredients: [{
       ingredient: string, 
       amount: number, 
-      unit: string}],
+      unit: string
+    }],
 
     instructions: [{
       instruction: string, 
-      order: number}],
+      order: number
+    }],
 
     comments?: [{
       comment: string, 
       name: string, 
-      createdAt: Date}]
+      createdAt: Date
+    }]
+}
+
+export interface CategoryType {
+  categories: [string];
 }

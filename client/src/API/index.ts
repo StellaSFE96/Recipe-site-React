@@ -18,11 +18,11 @@ export const fetchRecipesByQuery = async (query: string) => {
   // categories
 
 export const fetchCategories = async () => {
-    return await axios.get("/categories");
+    return await axios.get("/category");
 }
 
 export const fetchRecipesByCategory = async (category: string) => {
-    return await axios.get(`/categories/${category}/recipes`);
+    return await axios.get(`/category/${category}/recipes`);
 }
 
 export const fetchRecipesByCategoryAndQuery = async (
@@ -30,7 +30,7 @@ export const fetchRecipesByCategoryAndQuery = async (
     query: string
   ) => {
     return await axios.get(
-      `http://localhost:3000/categories/${category}/recipes?search=${query}`
+      `http://localhost:3000/category/${category}/recipes?search=${query}`
     );
   };
 

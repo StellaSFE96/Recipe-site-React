@@ -1,7 +1,25 @@
+import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { fetchCategories } from "../API";
-import styled from "styled-components";
+
+const Categories = () => {
+    const [categories, setCategories] = useState<any[]>([]);
+    useEffect(() => { 
+        const fetchCategories = async () => {
+            const categories = await fetch('http://localhost:3000/category')
+            .then(res => res.json())
+            setCategories(categories);
+            console.log(categories);
+        }
+        fetchCategories();
+        }, [])
+
+    return (
+        <StyledCategories>
+            {categories.map((category:any) => <Link to={`/category/${category._id}`} key={category}> <p>{category._id} ({category})</p> </Link>)}
+        </StyledCategories>
+    )
+}
 
 const StyledCategories = styled.div`
     background-color: #719cc1;
@@ -15,18 +33,5 @@ const StyledCategories = styled.div`
         }
     }
 `
-
-const Categories = () => {
-    const [categories, setCategories] = useState<any[]>([]);
-    useEffect(()=> {
-        fetchCategories().then(categories => setCategories(categories.data));
-    }, [])
-
-    return (
-        <StyledCategories>
-            {categories.map((category):any => <Link to={`/category/${category._id}`}> <p key={category}>{category._id} ({category.count})</p></Link>)}
-        </StyledCategories>
-    )
-}
 
 export default Categories;

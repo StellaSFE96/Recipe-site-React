@@ -5,15 +5,25 @@ import { RecipeType } from "../types/RecipeTypes";
 const RecipeCard = (props: {
     recipe: RecipeType;
     children?: React.ReactNode | React.ReactNode[];
+    handleNavigation?: Function;
+
+    
 }) => {
+    function handleClick(id: string) {
+        if (props.handleNavigation) {
+          props.handleNavigation(id);
+        }
+    };
+
     return (
-        <StyledRecipeCard>
+        <StyledRecipeCard onClick={() => {
+            if (props.recipe._id) handleClick(props.recipe._id);
+        }}>
            <img src={props.recipe.imageUrl} alt="recipe-image"/>
-            {/* <div className="image"></div> */}
             <div>
-                <Link to= {`/recipe/${props.recipe._id}`}>
+                {/* <Link to= {`/recipe/${props.recipe._id}`}> */}
                 <h1 className="recTitle">{props.recipe.title}</h1>
-                </Link>
+                {/* </Link> */}
                 <p>{props.recipe.description}</p>
             </div>
             <div className="details">
@@ -21,7 +31,7 @@ const RecipeCard = (props: {
                 <p>{props.recipe.timeInMins} Minutes</p>
             </div>
         </StyledRecipeCard>
-    )
+    );
 }
 
 const StyledRecipeCard = styled.div`
