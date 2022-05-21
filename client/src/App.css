@@ -9,18 +9,23 @@
 }
 
 .App-header {
-  background-color: #caadd4;
-  min-height: 15vh;
+  /* background-color: #caadd4; */
+  background-image: url(./assets/sweet.jpg);
+  background-size: cover;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(5px + 2vmin);
-  color: rgb(146, 74, 129);
+  font-size: calc(8px + 2vmin);
+  letter-spacing: 5px;
+  color: azure;
+  /* color: rgb(102, 180, 206); */
 }
 
 .App-subheader {
   position: relative;
   bottom: 30px;
+  color: rgb(134, 162, 172);
 }

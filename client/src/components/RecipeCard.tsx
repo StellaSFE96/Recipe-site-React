@@ -21,14 +21,15 @@ const RecipeCard = (props: {
         }}>
            <img src={props.recipe.imageUrl} alt="recipe-image"/>
             <div>
-                {/* <Link to= {`/recipe/${props.recipe._id}`}> */}
+                <Link to= {`/recipe/${props.recipe._id}`}>
                 <h1 className="recTitle">{props.recipe.title}</h1>
-                {/* </Link> */}
+                </Link>
                 <p>{props.recipe.description}</p>
+                <p>{props.recipe.ratings} rating?</p>
             </div>
             <div className="details">
-                <p>{Object.keys(props.recipe.ingredients).length} Ingredients</p>
-                <p>{props.recipe.timeInMins} Minutes</p>
+                <p>{Object.keys(props.recipe.ingredients).length} INGREDIENTS</p>
+                <p>{props.recipe.timeInMins} MINUTES</p>
             </div>
         </StyledRecipeCard>
     );
@@ -36,13 +37,16 @@ const RecipeCard = (props: {
 
 const StyledRecipeCard = styled.div`
  width: 40vh;
- height: 70vh;
+ height: 75vh;
  background-color: #f5d4d9;
  display: flex;
  flex-direction: column;
  /* border-radius: 2rem; */
  margin: 20px;
  text-decoration: none;
+ :hover {
+            transform: scale(1.02);
+    }
 
 & > img {
     align-self: center;
@@ -61,6 +65,12 @@ const StyledRecipeCard = styled.div`
 }
 & .details p{
     margin: 0px;
+}
+& h1{
+    color: #c672a8;
+}
+& a{
+    text-decoration: none;
 }
 `;
 

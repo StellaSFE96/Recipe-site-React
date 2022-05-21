@@ -17,3 +17,22 @@ import React from 'react'
 //     </StyledRecipeCard>
 //   )
 // }
+
+// const Categories = () => {
+//     const [categories, setCategories] = useState<any[]>([]);
+//     useEffect(() => { 
+//         const fetchCategories = async () => {
+//             const categories = await fetch('http://localhost:3000/category')
+//             .then(res => res.json())
+//             setCategories(categories);
+//             console.log(categories);
+//         }
+//         fetchCategories();
+//         }, [])
+
+//     return (
+//         <StyledCategories>
+//             {categories.map((category:any) => <Link to={`/category/${category._id}`} key={category}> <p>{category._id} ({category})</p> </Link>)}
+//         </StyledCategories>
+//     )
+// }

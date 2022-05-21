@@ -1,3 +1,7 @@
 export const NotFound = () => {
-    return console.log();
+    return (
+        <div>
+            <h1>Page Not Found</h1>
+        </div>
+    )
 }
