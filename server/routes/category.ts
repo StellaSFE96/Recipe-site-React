@@ -1,10 +1,10 @@
 import express, {Request, Response} from 'express';
-import {getCategories, getRecipesByCategory, getRecipesByCategoryAndSearch} from "../db/categoryCRUD"
+import {getCategory, getRecipesByCategory, getRecipesByCategoryAndSearch} from "../db/categoryCRUD"
 
 const router = express.Router()
 
 router.get('/', async (req: Request, res: Response)=>{
-    const returnRecipes = await getCategories();
+    const returnRecipes = await getCategory();
     res.status(200).json(returnRecipes);
 });
 

@@ -1,8 +1,8 @@
 import RecipeModel from "./models/recipe"
 
 export const getRecipes = async () => {
-    const recipes = await RecipeModel.find()
-    return recipes;
+    const returnedRecipe = await RecipeModel.find()
+    return returnedRecipe;
 }
 
 export const getRecipeById = async (id: string) => {
@@ -10,13 +10,11 @@ export const getRecipeById = async (id: string) => {
     return returnedRecipe;
   };
 
-export const getRecipesBySearch = async (search: Object) => {
-    const key = Object.keys(search).find((key) => key === "search");
-    console.log(key);
-    return await RecipeModel.find({
-            title: { $regex: key, $options: 'i'},
-            
-    });
+export const getRecipesBySearch = async (search: string) => {
+    const returnedRecipe = await RecipeModel.find({
+        "title": { $regex: search, $options: 'i'}
+})
+return returnedRecipe
 }
 
 // export const getRecipesById = async (id: string) => {
