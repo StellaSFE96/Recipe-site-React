@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { Params, useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import Ratings from '../components/RatingStars';
 
 const RecipePage = () => {
 	const [ recipe, setRecipe ] = useState<any>({});
@@ -25,7 +26,11 @@ const RecipePage = () => {
 					</div>
 					<div>
 						<p>{recipe.timeInMins} MINUTES </p>
-						<p>{recipe.ratings} RATING</p>
+						<p className="rating">
+							{recipe.ratings && (
+								<Ratings edit={true} recipeId={recipe._id} recipeRating={recipe.ratings} />
+							)}{' '}
+						</p>
 					</div>
 					<div>
 						<h1>INGREDIENTS</h1>
@@ -126,6 +131,9 @@ const StyledContainer = styled.div`
 		border: #95bfd5 dotted 2px;
 		margin: 1rem 5rem;
 		padding: 1rem;
+	}
+	& .rating {
+		margin: 2rem 1rem;
 	}
 `;
 

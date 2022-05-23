@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import React from 'react';
 
 const Categories = () => {
 	const [ categories, setCategories ] = useState<any[]>([]);
@@ -15,10 +16,9 @@ const Categories = () => {
 		<StyledCategories>
 			{categories.map((category: any) => (
 				<Link to={`/category/${category._id}`} key={category}>
-					{' '}
 					<p>
 						{category._id} ({category.count})
-					</p>{' '}
+					</p>
 				</Link>
 			))}
 		</StyledCategories>
@@ -35,14 +35,14 @@ const StyledCategories = styled.div`
 	z-index: 300;
 	position: sticky;
 	top: 0;
-	height: 6rem;
+	height: 4rem;
 	& .category {
 		:hover {
 			cursor: pointer;
 		}
 	}
 	& a {
-		color: azure;
+		/* color: azure; */
 		text-decoration: inherit;
 	}
 	& p {
@@ -50,6 +50,12 @@ const StyledCategories = styled.div`
 		:hover {
 			color: pink;
 		}
+	}
+	& .red {
+		color: red;
+	}
+	& .green {
+		color: green;
 	}
 `;
 

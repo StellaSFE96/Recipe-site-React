@@ -10,9 +10,10 @@ export const getRecipeById = async (id: string) => {
     return returnedRecipe;
   };
 
-export const getRecipesBySearch = async (search: string) => {
+export const getRecipesBySearch = async (title: string) => {
     const returnedRecipe = await RecipeModel.find({
-        "title": { $regex: search, $options: 'i'}
+        title: { $regex: title, $options: 'i'}
+        // "title": { $regex: search, $options: 'i'}
 })
 return returnedRecipe
 }
@@ -22,7 +23,7 @@ return returnedRecipe
 //     return recipes;
 // }
 
-export const ratingById = async (id: string, rating: number) => {
+export const ratingById = async (id: any, rating: any) => {
     const recipe = await RecipeModel.findOneAndUpdate(
         {_id: id },
         { $push: { ratings: rating }}

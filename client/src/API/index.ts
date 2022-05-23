@@ -22,28 +22,39 @@ export const fetchCategories = async () => {
 }
 
 export const fetchRecipesByCategory = async (category: string) => {
+    // return await axios.get(`/category/${category}`);
     return await axios.get(`/category/${category}/recipes`);
+    //category: string
 }
 
-export const fetchRecipesByCategoryAndQuery = async (
-    category: string,
-    query: string
-  ) => {
-    return await axios.get(
-      `http://localhost:3000/category/${category}/recipes?search=${query}`
-    );
-  };
-
-  // ratings and comments
-
-export async function postRating(recipeId: any, rating: any){
+export async function fetchRecipesByCategoryQuery(category: any, query: any){
     try {
-        const response = await axios.post(`/recipes/${recipeId}`, {rating: rating})
+        const response = await axios.post(`/category/${category}/recipes?search=${query}`)
         return response
     } catch (error: any){
         return error.response
     }
 }
+
+  // ratings and comments
+
+  export async function postRating(recipeId: any, rating: any){
+    try {
+        const response = await axios.post(`/recipes/${recipeId}/ratings`, {ratings: rating})
+        return response
+    } catch (error: any){
+        return error.response
+    }
+}
+
+// export async function postRating(recipeId: any, rating: any){
+//     try {
+//         const response = await axios.post(`/recipes/${recipeId}`, {rating: rating})
+//         return response
+//     } catch (error: any){
+//         return error.response
+//     }
+// }
 
 // export const fetchRecipesByCategoriesAndQuery = async (category: string, query: string) => {
 //     console.log("fetchRecipesByCategoriesAndQuery");
