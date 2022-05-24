@@ -9,7 +9,9 @@ const RecipePage = () => {
 	const { recipeId } = useParams();
 	useEffect(() => {
 		const fetchRecipe = async () => {
-			const recipe = await fetch(`http://localhost:3000/recipes/${recipeId}`).then((res) => res.json());
+			const recipe = await fetch(`${process.env.REACT_APP_API_BASE_URL}/recipes/${recipeId}`).then((res) =>
+				res.json()
+			);
 			setRecipe(recipe);
 			console.log(recipe);
 		};

@@ -6,20 +6,10 @@ import Ratings from '../components/RatingStars';
 // const RecipeCard = (props: {
 // 	recipe: RecipeType;
 // 	children?: React.ReactNode | React.ReactNode[];
-// 	// handleNavigation?: Function;
-// }) => {
-// function handleClick(id: string) {
-// 	if (props.handleNavigation) {
-// 		props.handleNavigation(id);
-// 	}
-// }
+
 const RecipeCard = ({ recipe }: any) => {
 	return (
-		<StyledRecipeCard
-		// onClick={() => {
-		// 	if (props.recipe._id) handleClick(props.recipe._id);
-		// }}
-		>
+		<StyledRecipeCard>
 			<img src={recipe.imageUrl} alt="recipe-image" />
 			<div>
 				<Link to={`/recipe/${recipe._id}`}>
@@ -27,7 +17,7 @@ const RecipeCard = ({ recipe }: any) => {
 				</Link>
 				<p className="description">{recipe.description}</p>
 				<span className="rating">
-					{recipe.ratings && <Ratings edit={true} recipeId={recipe._id} recipeRating={recipe.ratings} />}{' '}
+					<Ratings edit={false} recipeId={recipe._id} recipeRating={recipe.ratings} />
 				</span>
 			</div>
 			<div className="details">

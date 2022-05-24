@@ -23,7 +23,7 @@ const calculateAverage = (rating: any) => {
 
 const Ratings = ({ recipeRating, recipeId, edit }: IRating) => {
 	const ratingChange = async (newRating: any) => {
-		await postRating(recipeId, newRating);
+		const response = await postRating(recipeId, { ratings: newRating });
 	};
 	return (
 		<StyledRating

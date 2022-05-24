@@ -7,7 +7,7 @@ const Categories = () => {
 	const [ categories, setCategories ] = useState<any[]>([]);
 	useEffect(() => {
 		const fetchCategories = async () => {
-			const categories = await fetch('http://localhost:3000/category').then((res) => res.json());
+			const categories = await fetch(`${process.env.REACT_APP_API_BASE_URL}/category`).then((res) => res.json());
 			setCategories(categories);
 		};
 		fetchCategories();

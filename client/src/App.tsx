@@ -13,6 +13,7 @@ import SearchBar from './components/Search';
 import SearchResults from './views/SearchResults';
 
 const App = () => {
+	console.log(process.env.REACT_APP_API_BASE_URL);
 	return (
 		<div className="App">
 			<Header />

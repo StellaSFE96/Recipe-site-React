@@ -12,7 +12,9 @@ const SearchResults = () => {
 
 	useEffect(() => {
 		const getSearched = async () => {
-			const res = await fetch(`http://localhost:3000/recipes?search=${searchResult}`).then((data) => data.json());
+			const res = await fetch(
+				`${process.env.REACT_APP_API_BASE_URL}/recipes?search=${searchResult}`
+			).then((data) => data.json());
 			console.log(res, res.data);
 			setSearchedRecipe(res);
 		};

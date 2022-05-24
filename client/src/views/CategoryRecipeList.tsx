@@ -12,7 +12,9 @@ const RecipesByCategoryList = () => {
 	useEffect(
 		() => {
 			const fetchRecipes = async () => {
-				const recipes = await fetch(`http://localhost:3000/category/${categoryId}`).then((res) => res.json());
+				const recipes = await fetch(
+					`${process.env.REACT_APP_API_BASE_URL}/category/${categoryId}`
+				).then((res) => res.json());
 				setRecipes(recipes);
 				console.log(recipes);
 			};
