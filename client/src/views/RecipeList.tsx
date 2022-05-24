@@ -45,7 +45,7 @@ const RecipeList = () => {
 						value={searched}
 						onChange={(e) => setSearchRecipe(e.target.value)}
 					/>
-					<img src={require('../assets/magni.png')} alt="icon" width={20} height={20} />
+					{/* <img src={require('../assets/magni.png')} alt="icon" width={20} height={20} /> */}
 				</form>
 				<div>
 					<p>Recipe Collection</p>
