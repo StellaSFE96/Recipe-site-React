@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import React from 'react';
 
 const Categories = () => {
@@ -15,11 +15,17 @@ const Categories = () => {
 	return (
 		<StyledCategories>
 			{categories.map((category: any) => (
-				<Link to={`/category/${category._id}`} key={category}>
+				<NavLink
+					to={`/category/${category._id}`}
+					key={category}
+					style={({ isActive }) => ({
+						color: isActive ? '#ffc0cb' : 'azure'
+					})}
+				>
 					<p>
 						{category._id} ({category.count})
 					</p>
-				</Link>
+				</NavLink>
 			))}
 		</StyledCategories>
 	);
@@ -36,14 +42,13 @@ const StyledCategories = styled.div`
 	z-index: 300;
 	position: sticky;
 	top: 0;
-	min-height: 4rem;
+	height: 4rem;
 	& .category {
 		:hover {
 			cursor: pointer;
 		}
 	}
 	& a {
-		/* color: azure; */
 		text-decoration: inherit;
 	}
 	& p {
