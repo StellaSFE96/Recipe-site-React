@@ -8,7 +8,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-console.log(process.env.MONGO_DB_CONNECTION_STRING);
+console.log(process.env.MONGO_DB_CONNECTION_STRING); 
 connect(`${process.env.MONGO_DB_CONNECTION_STRING}`);
 // if (process.env.MONGO_DB_CONNECTION_STRING) {
 //     connect(process.env.MONGO_DB_CONNECTION_STRING).then(() => {
