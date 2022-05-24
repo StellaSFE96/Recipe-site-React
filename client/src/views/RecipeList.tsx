@@ -20,7 +20,9 @@ const RecipeList = () => {
 				setRecipes(recipes);
 			};
 			const fetchRecipes = async () => {
-				const recipes = await fetch('http://localhost:3000/recipes').then((data) => data.json());
+				const recipes = await fetch(`${process.env.REACT_APP_API_BASE_URL}/recipes`).then((data) =>
+					data.json()
+				);
 				setRecipes(recipes);
 				// console.log(recipes);
 			};
