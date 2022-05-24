@@ -31,7 +31,7 @@ const Ratings = ({ recipeRating, recipeId, edit }: IRating) => {
 			edit={edit}
 			value={calculateAverage(recipeRating)}
 			onChange={ratingChange}
-			half={false}
+			half={true}
 			size={30}
 			color1={unratedStarColor}
 			color2={starColor}

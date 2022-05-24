@@ -15,10 +15,20 @@ export const getRecipesByCategory = async (category: string) => {
 return recipes;
 }
 
-export const getRecipesByCategoryAndSearch = async (category: string, search: any) => {
-    const recipes = await RecipeModel.findById({category: category, $or: [
-        { title: {$regex: search, $options: 'i'}}
-    ]
+export const getRecipesByCategoryAndSearch = async (params: string, search: any) => {
+    const recipes = await RecipeModel.find(
+        {category: params,
+            title: {$regex: search, $options: 'i'}
+    
 });
     return recipes;
 }
+
+// export const getRecipesByCategoryAndSearch = async (category: string, search: any) => {
+//     const recipes = await RecipeModel.find(
+//         {category: category, $or: [
+//             { title: {$regex: search, $options: 'i'}}
+//     ]
+// });
+//     return recipes;
+// }

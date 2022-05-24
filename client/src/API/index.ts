@@ -27,9 +27,9 @@ export const fetchRecipesByCategory = async (category: string) => {
     //category: string
 }
 
-export async function fetchRecipesByCategoryQuery(category: any, query: any){
+export async function fetchRecipesByCategoryQuery(category: any, search: any){
     try {
-        const response = await axios.post(`/category/${category}/recipes?search=${query}`)
+        const response = await axios.get(`/category/${category}/recipes?search=${search}`)
         return response
     } catch (error: any){
         return error.response

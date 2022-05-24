@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 // export default function test() {
 //   return (
@@ -20,7 +20,7 @@ import React from 'react'
 
 // const Categories = () => {
 //     const [categories, setCategories] = useState<any[]>([]);
-//     useEffect(() => { 
+//     useEffect(() => {
 //         const fetchCategories = async () => {
 //             const categories = await fetch('http://localhost:3000/category')
 //             .then(res => res.json())
@@ -36,3 +36,72 @@ import React from 'react'
 //         </StyledCategories>
 //     )
 // }
+
+// CATEGORYLIST BY QUERY
+
+//code 1
+// const RecipesByCategoryList = () => {
+// 	const [ query, setQuery ] = useState('');
+// 	const [ recipes, setRecipes ] = useState<any>([]);
+// 	const { categoryId } = useParams();
+// 	useEffect(
+// 		() => {
+// 			if (query) {
+// 				fetchRecipesByCategoryQuery(categoryId, query).then((recipes) => setRecipes(recipes.data));
+// 			} else {
+// 				fetchRecipesByCategory(categoryId).then((recipes) => setRecipes(recipes.data));
+// 			}
+// 		},
+// 		[ query ]
+// 	);
+// 	return (
+// 		<div>
+// 			<StyledWrapper>
+// 				<input type="text" value={query} onChange={(e) => setQuery(e.target.value)} />
+// 				{recipes.map((recipe: any) => <RecipeCard key={recipe._id} recipe={recipe} />)}
+// 			</StyledWrapper>
+// 		</div>
+// 	);
+// };
+
+// code 2
+// const getSearched = async (searchRecipe: string) => {
+// 	const recipes = await fetch(
+// 		`http://localhost:3000/category/${categoryId}/recipes?search=${searchRecipe}`
+// 	).then((res) => res.json());
+// 	// console.log(recipes);
+// 	setRecipes(recipes);
+// };
+
+// const fetchRecipes = async () => {
+// 	const recipes = await fetch(`http://localhost:3000/category/${categoryId}`).then((res) => res.json());
+// 	setRecipes(recipes);
+// 	console.log(recipes);
+// };
+// fetchRecipes();
+
+// Right one!!!!!!!!
+// const RecipesByCategoryList = () => {
+// 	const [ recipes, setRecipes ] = useState<any>([]);
+// 	const { categoryId } = useParams();
+// 	useEffect(
+// 		() => {
+// 			const fetchRecipes = async () => {
+// 				const recipes = await fetch(`http://localhost:3000/category/${categoryId}`).then((res) => res.json());
+// 				setRecipes(recipes);
+// 				console.log(recipes);
+// 			};
+// 			fetchRecipes();
+// 		},
+// 		[ categoryId ]
+// 	);
+// 	return (
+// 		<div>
+// 			<StyledWrapper>
+// 				{recipes.map((recipe: any) => <RecipeCard key={recipe._id} recipe={recipe} />)}
+// 			</StyledWrapper>
+// 		</div>
+// 	);
+// };
+
+// export default RecipesByCategoryList;

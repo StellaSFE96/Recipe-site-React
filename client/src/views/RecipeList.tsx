@@ -5,6 +5,55 @@ import { RecipeType } from '../types/RecipeTypes';
 import { useParams } from 'react-router-dom';
 // import { fetchRecipes } from "../API";
 
+const RecipeList = () => {
+	const [ searchRecipe, setSearchRecipe ] = useState('');
+	const [ recipes, setRecipes ] = useState<RecipeType[]>([]);
+	const { searched } = useParams();
+
+	useEffect(
+		() => {
+			const getSearched = async (searchRecipe: string) => {
+				const recipes = await fetch(`http://localhost:3000/recipes/search/${searchRecipe}`).then((res) =>
+					res.json()
+				);
+				// console.log(recipes);
+				setRecipes(recipes);
+			};
+			const fetchRecipes = async () => {
+				const recipes = await fetch('http://localhost:3000/recipes').then((data) => data.json());
+				setRecipes(recipes);
+				// console.log(recipes);
+			};
+
+			if (searchRecipe) {
+				getSearched(searchRecipe);
+			} else {
+				fetchRecipes();
+			}
+		},
+		[ searchRecipe ]
+	);
+	return (
+		<div>
+			<StyledSearchBar>
+				<form>
+					<input
+						type="text"
+						placeholder="search recipes..."
+						value={searched}
+						onChange={(e) => setSearchRecipe(e.target.value)}
+					/>
+					<img src={require('../assets/magni.png')} alt="icon" width={20} height={20} />
+				</form>
+				<div>
+					<p>Recipe Collection</p>
+				</div>
+			</StyledSearchBar>
+			<StyledList>{recipes.map((recipe: any) => <RecipeCard key={recipe._id} recipe={recipe} />)}</StyledList>;
+		</div>
+	);
+};
+
 const StyledList = styled.div`
 	display: flex;
 	flex-wrap: wrap;
@@ -34,54 +83,7 @@ const StyledSearchBar = styled.div`
 	}
 	& img {
 		position: relative;
-		top: 9px;
+		top: 6px;
 	}
 `;
-
-const RecipeList = () => {
-	const [ recipes, setRecipes ] = useState<any>([]);
-	const fetchRecipes = async () => {
-		const recipes = await fetch('http://localhost:3000/recipes').then((res) => res.json());
-		setRecipes(recipes);
-		// console.log(recipes);
-	};
-
-	const [ searchRecipe, setSearchRecipe ] = useState('');
-	const { searched } = useParams();
-	const getSearched = async (searchRecipe: string) => {
-		const recipeResults = await fetch(`http://localhost:3000/recipes/search/${searched}`).then((res) => res.json());
-		console.log(recipeResults);
-		setSearchRecipe(recipeResults);
-	};
-
-	useEffect(
-		() => {
-			if (searchRecipe) {
-				getSearched(searchRecipe);
-			} else {
-				fetchRecipes();
-			}
-		},
-		[ searchRecipe ]
-	);
-	return (
-		<div>
-			<StyledSearchBar>
-				<form>
-					<input
-						type="text"
-						placeholder="search"
-						value={searched}
-						onChange={(e) => setSearchRecipe(e.target.value)}
-					/>
-					<img src={require('../assets/magni.png')} alt="icon" width={25} height={25} />
-				</form>
-				<div>
-					<p>Recipe Collection</p>
-				</div>
-			</StyledSearchBar>
-			<StyledList>{recipes.map((recipe: any) => <RecipeCard key={recipe._id} recipe={recipe} />)}</StyledList>;
-		</div>
-	);
-};
 export default RecipeList;

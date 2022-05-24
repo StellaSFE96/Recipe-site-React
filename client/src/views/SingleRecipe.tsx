@@ -1,6 +1,5 @@
-import React from 'react';
 import { useState, useEffect } from 'react';
-import { Params, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import Ratings from '../components/RatingStars';
 
@@ -63,6 +62,7 @@ const RecipePage = () => {
 const StyledContainer = styled.div`
 	background-color: #f8eaec;
 	display: flex;
+	flex-wrap: wrap;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -71,13 +71,15 @@ const StyledContainer = styled.div`
 
 	& article {
 		margin-top: 4rem;
-		width: 80%;
+		width: 90%;
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-around;
 	}
 	& .lowerContainer {
 		display: flex;
 		flex-direction: column;
+		width: 90%;
 		/* border: #95bfd5 dotted 2px; */
 	}
 	& ul {
@@ -103,7 +105,8 @@ const StyledContainer = styled.div`
 	}
 	& aside {
 		margin: 1rem;
-		padding: 2rem;
+		/* height: 90%; */
+		padding: 1rem;
 		text-align: left;
 		display: flex;
 		flex-direction: column;

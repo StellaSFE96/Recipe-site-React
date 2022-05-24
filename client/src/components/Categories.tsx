@@ -28,6 +28,7 @@ const Categories = () => {
 const StyledCategories = styled.div`
 	background-color: #719cc1;
 	display: flex;
+	flex-wrap: wrap;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-evenly;
@@ -35,7 +36,7 @@ const StyledCategories = styled.div`
 	z-index: 300;
 	position: sticky;
 	top: 0;
-	height: 4rem;
+	min-height: 4rem;
 	& .category {
 		:hover {
 			cursor: pointer;
