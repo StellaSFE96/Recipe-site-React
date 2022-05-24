@@ -4,6 +4,7 @@ import RecipeCard from '../components/RecipeCard';
 import styled from 'styled-components';
 import { fetchRecipesByCategoryQuery, fetchRecipesByCategory } from '../API';
 import { RecipeType } from '../types/RecipeTypes';
+import ToHomeBtn from '../components/ToHomeBtn';
 
 const RecipesByCategoryList = () => {
 	const [ recipes, setRecipes ] = useState<any>([]);
@@ -35,7 +36,8 @@ const RecipesByCategoryList = () => {
 	return (
 		<div>
 			<StyledSearchBar>
-				<form>
+				<ToHomeBtn />
+				{/* <form>
 					<input
 						type="text"
 						placeholder="search recipes..."
@@ -43,7 +45,7 @@ const RecipesByCategoryList = () => {
 						onChange={(e) => setRecipes(e.target.value)}
 					/>
 					<img src={require('../assets/magni.png')} alt="icon" width={20} height={20} />
-				</form>
+				</form> */}
 				<div>
 					<p>Recipe Collection</p>
 				</div>

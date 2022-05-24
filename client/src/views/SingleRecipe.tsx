@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import Ratings from '../components/RatingStars';
+import ToHomeBtn from '../components/ToHomeBtn';
 
 const RecipePage = () => {
 	const [ recipe, setRecipe ] = useState<any>({});
@@ -16,6 +17,7 @@ const RecipePage = () => {
 	}, []);
 	return (
 		<StyledContainer>
+			<ToHomeBtn />
 			<article className="upperContainer">
 				<img src={recipe.imageUrl} alt="" />
 				<aside>
