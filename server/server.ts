@@ -5,9 +5,10 @@ import categoryToRouter from './routes/category';
 import cors from 'cors'
 import dotenv from 'dotenv';
 
-// connect('mongodb+srv://stella1996:StellasCloud@cluster0.tzcjx.mongodb.net/recipesite?retryWrites=true&w=majority')
 
 dotenv.config();
+
+console.log(process.env.MONGO_DB_CONNECTION_STRING);
 connect(`${process.env.MONGO_DB_CONNECTION_STRING}`);
 // if (process.env.MONGO_DB_CONNECTION_STRING) {
 //     connect(process.env.MONGO_DB_CONNECTION_STRING).then(() => {
