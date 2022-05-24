@@ -52,7 +52,7 @@ const StyledCategories = styled.div`
 		text-decoration: inherit;
 	}
 	& p {
-		font-size: 1.2rem;
+		font-size: 1rem;
 		:hover {
 			color: pink;
 		}
