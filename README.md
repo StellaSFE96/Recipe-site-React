@@ -4,3 +4,5 @@ Backend deployed to Heroku and MongoDB Atlas while Frontend on Netlify.
 
 ** https://desserts-cocktails.netlify.app/ **
 
+Browse, search and rate amazing recipes!
+
