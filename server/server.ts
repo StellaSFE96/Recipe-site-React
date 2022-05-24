@@ -3,8 +3,19 @@ import { connect } from 'mongoose';
 import recipeToRouter from "./routes/recipe"
 import categoryToRouter from './routes/category';
 import cors from 'cors'
+import dotenv from 'dotenv';
 
-connect('mongodb+srv://stella1996:StellasCloud@cluster0.tzcjx.mongodb.net/recipesite?retryWrites=true&w=majority')
+// connect('mongodb+srv://stella1996:StellasCloud@cluster0.tzcjx.mongodb.net/recipesite?retryWrites=true&w=majority')
+
+dotenv.config();
+connect(`${process.env.MONGO_DB_CONNECTION_STRING}`);
+// if (process.env.MONGO_DB_CONNECTION_STRING) {
+//     connect(process.env.MONGO_DB_CONNECTION_STRING).then(() => {
+//         app.listen(port, () => console.log('listening to port: ' + port));
+//     })
+// } else {
+//     console.log('Configuration MONGO_DB_CONNECTION_STRING not set')
+// }
 
 const app = express()
 // const port = 3000
