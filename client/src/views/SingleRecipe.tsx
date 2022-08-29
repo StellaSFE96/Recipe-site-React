@@ -96,6 +96,7 @@ const StyledContainer = styled.div`
 		padding-left: 2rem;
 		margin-top: 1rem;
 		color: #40515a;
+		font-size: 1rem;
 	}
 	& ol {
 		list-style-position: outside;
@@ -120,19 +121,22 @@ const StyledContainer = styled.div`
 		margin: 1rem 0;
 		border-radius: 30px;
 		height: max-content;
+		max-width: 50%;
 	}
 	& h1 {
-		font-size: 2rem;
+		font-size: 1.2rem;
 		color: #7c9bac;
 		margin: 0 0 2rem 0;
 	}
 	& h2 {
 		color: #707f86;
 		margin: 0;
+		font-size: 1rem;
 	}
 	& p {
 		font-size: 1rem;
 		color: #40515a;
+		font-size: 0.8rem;
 	}
 	& .instructions {
 		border: #95bfd5 dotted 2px;

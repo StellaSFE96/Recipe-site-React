@@ -38,10 +38,20 @@ export async function fetchRecipesByCategoryQuery(category: any, search: any){
 }
 
   // ratings and comments
+  // https://sweet-recipes.herokuapp.com/
 
-  export async function postRating(recipeId: any, rating: any){
+//   export async function postRating(recipeId: string, rating: number){
+//     try {
+//         const response = await axios.post(`/recipes/${recipeId}/ratings`, {rating: rating})
+//         return response
+//     } catch (error: any){
+//         return error.response
+//     }
+// }
+
+export async function postRating(recipeId: string, rating: any){
     try {
-        const response = await axios.post(`/recipes/${recipeId}/ratings`, {ratings: rating})
+        const response = await axios.post(`https://sweet-recipes.herokuapp.com/recipes/${recipeId}/ratings`, {rating: rating})
         return response
     } catch (error: any){
         return error.response
@@ -56,6 +66,8 @@ export async function fetchRecipesByCategoryQuery(category: any, search: any){
 //         return error.response
 //     }
 // }
+
+
 
 // export const fetchRecipesByCategoriesAndQuery = async (category: string, query: string) => {
 //     console.log("fetchRecipesByCategoriesAndQuery");

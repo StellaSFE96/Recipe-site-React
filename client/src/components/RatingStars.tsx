@@ -23,7 +23,9 @@ const calculateAverage = (rating: any) => {
 
 const Ratings = ({ recipeRating, recipeId, edit }: IRating) => {
 	const ratingChange = async (newRating: any) => {
-		const response = await postRating(recipeId, { ratings: newRating });
+		await postRating(recipeId, newRating);
+		console.log(newRating, recipeId);
+		// const response = await postRating(recipeId, { ratings: newRating });
 	};
 	return (
 		<StyledRating
@@ -31,7 +33,7 @@ const Ratings = ({ recipeRating, recipeId, edit }: IRating) => {
 			edit={edit}
 			value={calculateAverage(recipeRating)}
 			onChange={ratingChange}
-			half={true}
+			half={false}
 			size={30}
 			color1={unratedStarColor}
 			color2={starColor}

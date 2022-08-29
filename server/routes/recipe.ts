@@ -13,21 +13,36 @@ router.get('/search/:query', async (req: Request, res: Response) => {
     res.status(200).json(returnRecipes)
 });
 
-router.get(
-    "/:recipeId",
-    async (req: express.Request, res: express.Response) => {
-      const params = req.params;
-      let id = params.recipeId;
-      const recipeById = await getRecipeById(id);
-      res.send(recipeById);
+// router.get(
+//     "/:recipeId",
+//     async (req: express.Request, res: express.Response) => {
+//       const params = req.params;
+//       let id = params.recipeId;
+//       const recipeById = await getRecipeById(id);
+//       res.send(recipeById);
+//   }
+// );
+
+router.get("/:recipeId",
+    async (req: Request, res: Response) => {
+      const recipe = await getRecipeById(req.params.recipeId);
+      res.json(recipe);
   }
 );
   
-
-router.post('/recipeId/ratings', async (req: Request, res: Response) => {
+//la till /:recipeId
+router.post('/:recipeId/ratings', 
+async (req: Request, res: Response) => {
     const returnRecipes = await ratingById(req.params.recipeId, req.body.rating);
     res.status(200).json(returnRecipes);
 })
+
+// router.post('/1/ratings', async (req: Request, res: Response) => {
+//     console.log("test");
+//     // const returnRecipes = await ratingById(req.params.recipeId, req.body.rating);
+
+//     // res.status(200).json(returnRecipes);
+// })
 
 
 // router.get('/search/:query', async (req: Request, res: Response) => {
