@@ -30,7 +30,7 @@ const RecipeCard = ({ recipe }: any) => {
 
 const StyledRecipeCard = styled.div`
 	width: 40vh;
-	height: 75vh;
+	height: 82vh;
 	background-color: #f5d4d9;
 	display: flex;
 	flex-direction: column;
@@ -48,13 +48,14 @@ const StyledRecipeCard = styled.div`
 		background-color: #e4e471;
 	}
 	& .recTitle {
-		font-size: 18px;
+		font-size: 15px;
 		text-decoration: none;
 	}
 	& .details {
 		display: flex;
 		justify-content: space-evenly;
 		padding: 0px;
+		font-size: 10px;
 	}
 	& .details p {
 		margin: 0px;
@@ -71,6 +72,7 @@ const StyledRecipeCard = styled.div`
 	}
 	& .description {
 		margin-bottom: 0px;
+		font-size: 13px;
 	}
 `;
 
