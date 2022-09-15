@@ -49,7 +49,7 @@ export async function fetchRecipesByCategoryQuery(category: any, search: any){
 //     }
 // }
 
-export async function postRating(recipeId: string, rating: any){
+export async function postRating(recipeId: any, rating: any){
     try {
         const response = await axios.post(`https://sweet-recipes.herokuapp.com/recipes/${recipeId}/ratings`, {rating: rating})
         return response

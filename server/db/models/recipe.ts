@@ -6,7 +6,7 @@ export interface RecipeType {
     imageUrl: string,
     timeInMins: number,
     // ratings: Array<number>,
-    ratings: [number],
+    ratings: number[],
     category: Array<string>,
     ingredients: [{ingredient: string, amount: number, unit: string}],
     instructions:  [{instruction: string}],

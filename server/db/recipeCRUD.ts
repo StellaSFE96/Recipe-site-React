@@ -27,8 +27,7 @@ export const ratingById = async (id: string, rating: number) => {
     const recipe = await RecipeModel.findOneAndUpdate(
         {_id: id },
         { $push: { ratings: rating }}
-    )
-return recipe
+    );
 }
 
 

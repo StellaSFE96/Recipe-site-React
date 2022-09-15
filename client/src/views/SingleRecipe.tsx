@@ -3,19 +3,34 @@ import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import Ratings from '../components/RatingStars';
 import ToHomeBtn from '../components/ToHomeBtn';
+import axios from 'axios';
 
 const RecipePage = () => {
 	const [ recipe, setRecipe ] = useState<any>({});
 	const { recipeId } = useParams();
+	// useEffect(() => {
+	// 	const fetchRecipe = async () => {
+	// 		const recipe = await fetch(`${process.env.REACT_APP_API_BASE_URL}/recipes/${recipeId}`).then((res) =>
+	// 			res.json()
+	// 		);
+	// 		setRecipe(recipe);
+	// 		console.log(recipe);
+	// 	};
+	// 	fetchRecipe();
+	// }, []);
 	useEffect(() => {
-		const fetchRecipe = async () => {
-			const recipe = await fetch(`${process.env.REACT_APP_API_BASE_URL}/recipes/${recipeId}`).then((res) =>
-				res.json()
-			);
-			setRecipe(recipe);
-			console.log(recipe);
-		};
-		fetchRecipe();
+		console.log(recipeId);
+		const recipe = `https://sweet-recipes.herokuapp.com/recipes/${recipeId}`;
+		console.log(recipe);
+		axios
+			.get(recipe)
+			.then((res) => {
+				console.log(res);
+				setRecipe(res.data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
 	}, []);
 	return (
 		<StyledContainer>
@@ -33,6 +48,7 @@ const RecipePage = () => {
 							{recipe.ratings && (
 								<Ratings edit={true} recipeId={recipe._id} recipeRating={recipe.ratings} />
 							)}{' '}
+							{/* ({Ratings.count}) */}
 						</p>
 					</div>
 					<div>
