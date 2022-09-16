@@ -48,7 +48,6 @@ const RecipePage = () => {
 							{recipe.ratings && (
 								<Ratings edit={true} recipeId={recipe._id} recipeRating={recipe.ratings} />
 							)}{' '}
-							{/* ({Ratings.count}) */}
 						</p>
 					</div>
 					<div>

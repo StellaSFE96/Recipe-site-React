@@ -22,19 +22,6 @@ const schema = new Schema<RecipeType>({
     category: {type: [String], required: true},
     ingredients: { type: [Object], required: true},
     instructions: { type: [Object], required: true},
-    // ingredients:{
-    //     type: [{
-    //         ingredient: String,
-    //         amount: Number,
-    //         unit: String
-    //     }], 
-    //     required: true},
-    // instructions: {
-    //     type: [{
-    //         instruction: String,
-    //         order: Number
-    //     }], 
-    //     required: true},
     comments: {
         type: [{
             comment: String,
@@ -44,5 +31,6 @@ const schema = new Schema<RecipeType>({
         required: false}
 }) 
 
-const RecipeModel = model<RecipeType>('Recipe', schema)
+const RecipeModel = model<RecipeType>('rec', schema, 'recipes')
+// const RecipeModel = model<RecipeType>('Recipe', schema)
 export default RecipeModel;

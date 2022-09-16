@@ -18,11 +18,6 @@ export const getRecipesBySearch = async (title: string) => {
 return returnedRecipe
 }
 
-// export const getRecipesById = async (id: string) => {
-//     const recipes = await RecipeModel.findById(id)
-//     return recipes;
-// }
-
 export const ratingById = async (id: string, rating: number) => {
     const recipe = await RecipeModel.findOneAndUpdate(
         {_id: id },
